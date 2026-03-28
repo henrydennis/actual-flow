@@ -19,9 +19,9 @@ services:
       - ./data:/app/config
     restart: unless-stopped
     networks:
-      - actualbudget
+      - hckw66f8m5chgm6n1j7ggld3_actualbudget
 networks:
-  actualbudget:
+  hckw66f8m5chgm6n1j7ggld3_actualbudget:
     driver: bridge
     external: true
 
