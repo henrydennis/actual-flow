@@ -4,6 +4,7 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: actual-flow
+    net
     environment:
       - TZ=${TZ:-UTC}
       # Skip TLS verification for self-signed certificates (set to 1 to enable verification)
@@ -18,6 +19,12 @@ services:
       # Persist config and account mappings
       - ./data:/app/config
     restart: unless-stopped
+    networks:
+      - actualbudget
+networks:
+  actualbudget:
+    driver: bridge
+    external: true
 
 # If running Actual Budget in the same compose file, uncomment below:
 #
