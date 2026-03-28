@@ -4,7 +4,6 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: actual-flow
-    net
     environment:
       - TZ=${TZ:-UTC}
       # Skip TLS verification for self-signed certificates (set to 1 to enable verification)
